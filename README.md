@@ -1,5 +1,4 @@
 # NYCU-Deep_Learning_and_Practice
-2025, summer
 Instructor : 彭文孝、陳永昇、謝秉均
 ## Scores
 
