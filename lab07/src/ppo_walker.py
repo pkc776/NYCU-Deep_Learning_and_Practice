@@ -479,7 +479,6 @@ class PPOAgent:
             self.seed = seed
         self.is_test = True
         video_folder = None 
-        # 只有要錄影才要求 rgb_array，否則不要建 GL context
         render_mode = "rgb_array" if video_folder else None
         # render_mode = None
         test_env = gym.make("Walker2d-v4", render_mode=render_mode)
@@ -489,7 +488,6 @@ class PPOAgent:
                 test_env = gym.wrappers.RecordVideo(test_env, video_folder=video_folder)
             except Exception as e:
                 print(f"RecordVideo init failed ({e}); falling back to no video.")
-                # 重新建一個不渲染的環境
                 test_env.close()
                 test_env = gym.make("Walker2d-v4")  # no render_mode
 
